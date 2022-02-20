@@ -1,0 +1,70 @@
+@import "styles/palette";
+
+.chat {
+  &_wrapper {
+    flex: 0.7;
+    flex-grow: 1;
+    margin-top: 60px;
+  }
+
+  &_container {
+    max-height: calc(100vh - 125px);
+    overflow-y: scroll;
+  }
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: $white;
+    border-bottom: 1px solid $grayLight;
+
+    &__left {
+      display: flex;
+      align-items: center;
+
+      h4 {
+        display: flex;
+        margin-right: 10px;
+        text-transform: lowercase;
+
+        svg {
+          margin-left: 10px;
+          font-size: 18px;
+        }
+      }
+    }
+
+    &__right {
+      p {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+
+        svg {
+          margin-right: 5px !important;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  &_messages {
+
+  }
+
+  &_bottom {
+    padding-bottom: 100px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

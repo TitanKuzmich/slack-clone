@@ -1,0 +1,39 @@
+@import "styles/palette";
+
+.option {
+  &_container {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding-left: 2px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.9;
+      background-color: $slackDark;
+    }
+
+    &__active {
+      background-color: $slackDark;
+    }
+
+    h3 {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+
+      span {
+        display: block;
+        padding: 15px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+

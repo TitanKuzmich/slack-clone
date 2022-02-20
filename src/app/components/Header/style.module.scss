@@ -1,0 +1,77 @@
+@import "styles/palette";
+
+.header {
+  &_container {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 0;
+    background-color: $slackColor;
+    color: $white;
+  }
+
+  &_left {
+    flex: 0.3;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+
+    & > svg {
+      margin: 0 30px 0 auto;
+    }
+  }
+
+  &_avatar {
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &_center {
+    flex: 0.4;
+    opacity: 1;
+    border-radius: 6px;
+    text-align: center;
+    display: flex;
+    padding: 0 50px;
+    background-color: $slackBright;
+    color: $gray;
+    border: 1px solid $gray;
+
+    & > input {
+      background-color: transparent;
+      border: none;
+      text-align: center;
+      min-width: 30vw;
+      color: $white;
+    }
+  }
+
+  &_right {
+    flex: 0.3;
+    display: flex;
+    align-items: flex-end;
+
+    & > svg {
+      margin: 0 20px -0px auto;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
