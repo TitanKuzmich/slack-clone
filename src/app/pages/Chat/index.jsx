@@ -1,6 +1,7 @@
 import React, {useEffect, useRef} from 'react'
 import {useSelector} from "react-redux"
 import {useCollection, useDocument} from "react-firebase-hooks/firestore"
+import {BallTriangle} from "react-loader-spinner"
 
 import {db} from "lib/firebase"
 import ChatInput from "components/ChatInput"
@@ -12,12 +13,12 @@ import style from './style.module.scss'
 const Chat = () => {
     const bottomRef = useRef(null)
     const {roomId} = useSelector((state) => state.app)
+
     const [roomDetails] = useDocument(
         roomId && db.collection('rooms').doc(roomId)
     )
     const [roomMessages, loading] = useCollection(
-        roomId
-        && db
+        roomId && db
             .collection('rooms')
             .doc(roomId)
             .collection('messages')
@@ -25,14 +26,17 @@ const Chat = () => {
     )
 
     useEffect(() => {
-        bottomRef?.current?.scrollIntoView({behavior: "smooth"})
+         bottomRef?.current?.scrollIntoView({behavior: "smooth"})
     }, [roomId, loading])
 
-    return (
+    if (!roomMessages && !roomDetails) {
+        return null
+    }
 
-        <>
-            {roomMessages && roomDetails && (
-                <div className={style.chat_wrapper}>
+    return (
+        <div className={style.chat_wrapper}>
+            {!loading ? (
+                <>
                     <div className={style.chat_header}>
                         <div className={style.chat_header__left}>
                             <h4><strong>#{roomDetails?.data().name}</strong></h4>
@@ -47,6 +51,7 @@ const Chat = () => {
                     </div>
                     <div className={style.chat_container}>
                         <div className={style.chat_messages}>
+
                             {roomMessages?.docs.map((doc) => (
                                 <Message
                                     key={doc.id}
@@ -67,9 +72,15 @@ const Chat = () => {
                             roomId={roomId}
                         />
                     </div>
+                </>
+            ) : (
+                <div className="loading_wrapper">
+                    <BallTriangle
+                        color="purple" height={80} width={80}
+                    />
                 </div>
             )}
-        </>
+        </div>
     )
 }
 

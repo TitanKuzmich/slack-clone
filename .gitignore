@@ -17,3 +17,7 @@ coverage
 *.report.html
 .languagebabel
 /dll
+.firebase/
+.firebaserc
+dist
+firebase.json

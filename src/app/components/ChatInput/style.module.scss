@@ -15,13 +15,24 @@
 
       input {
         font-size: 16px;
-        padding: 10px 40px 10px 16px;
+        padding: 10px 80px 10px 16px;
         color: $black;
         width: 100%;
         border: none;
         border-radius: 6px;
         box-sizing: border-box;
       }
+    }
+
+    .emoji_picker {
+      position: absolute;
+      bottom: 0;
+      right: 40px;
+      padding: 8px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     &_send {

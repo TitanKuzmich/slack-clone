@@ -7,7 +7,8 @@ import App from "./App"
 import store from "state/store"
 
 import "styles/general.scss"
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import 'emoji-mart/css/emoji-mart.css'
 
 ReactDOM.render(
     <React.StrictMode>
